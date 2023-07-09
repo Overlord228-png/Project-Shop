@@ -1,16 +1,16 @@
 import { NavLink } from "react-router-dom"
 import React from "react"
 import "style/headerAdmin.css"
-import Users from "img/users.svg"
+import Users from "img/User2.png"
 import Logotip from "img/logotip.svg"
 
 export default function HeaderAdmin() {
     return (
-        <header className="">
-            <div className="">
-                <div className="">
+        <header className="header__admin">
+            <div className="header__conteiner-admin">
+                <div className="header__wrapper">
                     <a href="#" className="">
-                        <img src={Logotip} alt="logo" className=""/>
+                        <img src={Logotip} alt="logo" className="logo__img"/>
                         <img src={Users} alt="user" className=""/>
                     </a>
                     <nav className="">
@@ -26,7 +26,7 @@ export default function HeaderAdmin() {
                                 </NavLink>
                             </li>
                             <li className="">
-                                <NavLink className="l" to="/admin/TypePage">
+                                <NavLink className="" to="/admin/TypePage">
                                     Type
                                 </NavLink>
                             </li>
