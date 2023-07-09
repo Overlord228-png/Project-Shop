@@ -1,0 +1,30 @@
+@import "style/reset.css";
+
+/* header */
+.header__admin{
+    width: 100%;
+    background-color: #1E2538;
+}
+
+.header__conteiner-admin{
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+/* header */
+
+.logo__img{
+    width: 75px;
+    background-color: white;
+    border-radius: 75%;
+    margin: 5px;
+}
