@@ -1,0 +1,91 @@
+@import "style/reset.css";
+
+.Login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-heading {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  
+  .login-label {
+    margin-bottom: 8px;
+  }
+  
+  .login-input {
+    /* стили для InputEmailItem и InputPasswordItem */
+  }
+  
+  .login-checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .login-checkbox {
+    /* стили для InputCheckboxItem */
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  
+  .login-button {
+    margin-right: 8px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .register-button {
+    /* стили для кнопки Register */
+}
+
+.restore-password p{
+    display: flex;
+    margin-top: 16px;
+    color: #3657CB;
+    text-align: center;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration-line: underline;
+    cursor: pointer;
+    animation: button-click 0.2s;
+}
+.restore-password:active {
+    transform: scale(0.95);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin: 16px auto;
+    list-style-type: none;
+}
+
+.social-link,
+.social-link img{
+    width: 41px;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0 8px;
+}
