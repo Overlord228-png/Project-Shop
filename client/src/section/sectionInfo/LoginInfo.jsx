@@ -9,6 +9,7 @@ import Google from "img/google.png"
 import "style/styleLogin.css"
 import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom';
+import RegisterBtn from 'components/Buttons/RegisterBtn';
 
 export default function LoginInfo() {
     const [email, setEmail] = useState('');
@@ -42,24 +43,24 @@ export default function LoginInfo() {
             <form className="login-form" action="" onSubmit={handleSubmit}>
                 <h1 className="login-heading">Login</h1>
                 <label htmlFor="email" className="login-label">Email:</label>
-                    <InputEmailItem className="login-input" setEmail={setEmail} email={email} />
+                    <InputEmailItem setEmail={setEmail} email={email} />
                 <label htmlFor="password" className="login-label">Пароль:</label>
-                    <InputPasswordItem className="login-input" setPassword={setPassword} password={password} />
+                    <InputPasswordItem setPassword={setPassword} password={password} />
                 <label htmlFor="remember" className="login-checkbox-label">
-                    <InputCheckboxItem className="login-checkbox" setRemember={setRemember} remember={remember} />
+                    <InputCheckboxItem setRemember={setRemember} remember={remember} />
                     Remember me
                 </label>
                 <div className="button-container">
                     <button type="submit" className="login-button">To come in</button>
-                    <button type="submit" className="register-button">Register</button>
+                    <RegisterBtn />
                 </div>
                 <div className="restore-password">
                     <p>Restore password</p>
                 </div>
                 <div className="social-links">
-                    <li><NavLink className="social-link"><img src={Facebook} alt="Facebook" /></NavLink></li>
-                    <li><NavLink className="social-link"><img src={Twitter} alt="Twitter" /></NavLink></li>
-                    <li><NavLink className="social-link"><img src={Google} alt="Google" /></NavLink></li>
+                    <li><NavLink className="social-link"><img src={Facebook} alt="Facebook"/></NavLink></li>
+                    <li><NavLink className="social-link"><img src={Twitter} alt="Twitter"/></NavLink></li>
+                    <li><NavLink className="social-link"><img src={Google} alt="Google"/></NavLink></li>
                 </div>
             </form>
         </div>
