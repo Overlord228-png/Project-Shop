@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutInfo from 'section/AboutInfo'
+import AboutInfo from 'section/sectionInfo/AboutInfo'
 import Footer from 'section/Footer'
 import Header from 'section/Header'
 
