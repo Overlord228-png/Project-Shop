@@ -3,7 +3,7 @@ import axios from "axios"
 
 import InputAddFile from "components/Inputs/InputAdd/InputAddFile"
 
-import AddProduct from "components/Buttons/BtnAdd/AddProduct"
+import AddProduct from "components/Buttons/AddProduct"
 import InputNameProduct from "components/Inputs/InputAdd/InputNameProduct"
 import InputPriceProduct from "components/Inputs/InputAdd/InputPriceProduct"
 
