@@ -1,5 +1,5 @@
 import React from 'react'
-import BlogInfo from 'section/BlogInfo'
+import BlogInfo from 'section/sectionInfo/BlogInfo'
 import Footer from 'section/Footer'
 import Header from 'section/Header'
 
