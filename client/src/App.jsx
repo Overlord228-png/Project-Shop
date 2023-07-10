@@ -1,4 +1,5 @@
 import Main from 'pages/Page/Main';
+import ErrorPage from 'pages/Page/ErrorPage';
 
 import Shop from 'pages/Page/Shop';
 import Blog from 'pages/Page/Blog';
@@ -19,6 +20,7 @@ function App() {
     return (
         <Routes>
             <Route path="/" element={ <Main/> }/>
+            <Route path="*" element={ <ErrorPage/> }/>
 
             <Route path="/shop" element={ <Shop /> }/>
             <Route path="/blog" element={ <Blog /> }/>
