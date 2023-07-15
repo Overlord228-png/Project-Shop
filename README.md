@@ -1,6 +1,6 @@
 # Project-Shop
-# React/Routes/Route/React-Router-Dom;
-# BrowserRouter/ReactDOM/Router-Dom;
-# NavLink/useState/useEffect;
-# Axios/Async/API;
-# Node.js/CSS;
+1) React/Routes/Route/React-Router-Dom;
+2) BrowserRouter/ReactDOM/Router-Dom;
+3) NavLink/useState/useEffect;
+4) Axios/Async/API;
+5) Node.js/CSS;
