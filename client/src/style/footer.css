@@ -1,0 +1,61 @@
+@import "style/reset.css";
+
+.footer{
+    width: 100%;
+    background-color: #151A26;
+}
+
+.footer__conteiner{
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.distribution{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(29, 58, 160, 0.90);
+}
+
+h1{
+    color: #FFF;
+    text-align: center;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+h6{
+    color: #FFF;
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140.2%; /* 30.844px */
+}
+
+p{
+    width: 500px;
+    margin: 26px auto;
+    color: rgba(227, 230, 240, 0.72);
+    line-height: 119%; /* 17.85px */
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+}
+
+input{
+    width: 425px;
+    border-radius: 10px;
+    background: #FFF;
+}
+
+button{
+    width: 182px;
+    border-radius: 10px;
+    background: #F2F60F;
+}
