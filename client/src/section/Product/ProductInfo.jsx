@@ -7,17 +7,17 @@ import AddProduct from "components/Buttons/AddProduct"
 import InputNameProduct from "components/Inputs/InputAdd/InputNameProduct"
 import InputPriceProduct from "components/Inputs/InputAdd/InputPriceProduct"
 
+import "style/styleProduct.css"
+
 export default function ProductInfo() {
     /// общие хуки
     /// for brand
     const [saveIdBrand, setSeaveIdBrand] =useState ()
     const [brands, setBrands] = useState([])
-    const [addInput, setAddInput] = useState("")
 
     /// for type
     const [saveIdType, setSeaveIdType] = useState()
     const [types, setTypes] = useState([])
-    const [addTypes, setAddTypes] = useState('')
 
     /// for Img
     const [img, setImg] = useState({});
@@ -63,11 +63,6 @@ export default function ProductInfo() {
         const resp = await axios.get('http://localhost:5000/api/brand')
         setBrands(resp.data)
     }
-
-    const addBrand = async () => {
-        const resp = await axios.post('http://localhost:5000/api/brand', {name:addInput})
-        setBrands([...brands,resp.data])
-    }
     ///brand
 
     /// type
@@ -80,11 +75,6 @@ export default function ProductInfo() {
         setTypes(resp.data)
     }
 
-    const addTypesInput = async ()=>{
-        ///console.log(addTypes)
-        const resp = await axios.post('http://localhost:5000/api/type', {name:addTypes})
-        setTypes([...types,resp.data])
-    }
     /// type
 
     /// Общий useEffect
@@ -147,12 +137,12 @@ export default function ProductInfo() {
             <div className="">
                 <AddProduct addProduct={addProduct} />
             </div>
-
+            
             {showProduct.map((product) => (
-                <div key={product.id}>
-                    <h2>{product.name}</h2>
-                    <img src={`http://127.0.0.1:5000/${product.img}`} alt={product.name}/>
-                    <h2>{product.price}</h2>
+                <div key={product.id} className="product__item">
+                    <h2 className="">{product.name}</h2>
+                    <img src={`http://127.0.0.1:5000/${product.img}`} alt={product.name} className="product__img"/>
+                    <p className="text__price">{product.price}$</p>
                 </div>
             ))}
         </div>
