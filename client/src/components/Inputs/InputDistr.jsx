@@ -5,7 +5,7 @@ export default function InputDistr() {
         <input 
             type="text" 
             placeholder='Введите свой E-mail адрес'
-            className=''
+            className='input__distr-email'
         />
     )
 }
