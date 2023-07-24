@@ -1,0 +1,16 @@
+.product__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:blueviolet;
+    max-width: 200px;
+}
+.product__img,
+.product__img img{
+    width: 100%;
+    max-width: 180px;
+    border-radius: 5%;
+}
+.text__price{
+    color: black;
+}
