@@ -28,3 +28,21 @@
     border-radius: 75%;
     margin: 5px;
 }
+
+.logo__img img {
+    max-width: 100%;
+    display: block;
+}
+
+.user__avatar{
+    width: 50px;
+}
+.user__avatar img {
+    max-width: 100%;
+    display: block;
+}
+
+.admin__list{
+    display: flex;
+    position: relative;
+}
