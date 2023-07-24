@@ -11,27 +11,29 @@ export default function HeaderAdmin() {
                 <div className="header__wrapper">
                     <a href="#" className="">
                         <img src={Logotip} alt="logo" className="logo__img"/>
-                        <img src={Users} alt="user" className=""/>
                     </a>
-                    <nav className="">
-                        <ul className="">
-                            <li className="">
-                                <NavLink className="" to="/admin/ProductPage">
+                    <nav className="admin__menu">
+                        <ul className="admin__list">
+                            <li className="list__item">
+                                <NavLink className="list__item-page" to="/admin/ProductPage">
                                     Product
                                 </NavLink>
                             </li>
-                            <li className="">
-                                <NavLink className="" to="/admin/BrandPage">
+                            <li className="list__item">
+                                <NavLink className="list__item-page" to="/admin/BrandPage">
                                     Brand
                                 </NavLink>
                             </li>
-                            <li className="">
-                                <NavLink className="" to="/admin/TypePage">
+                            <li className="list__item">
+                                <NavLink className="list__item-page" to="/admin/TypePage">
                                     Type
                                 </NavLink>
                             </li>
                         </ul>
                     </nav>
+                    <a href="#">
+                        <img src={Users} alt="user" className="user__avatar"/>
+                    </a>
                 </div>
             </div>
         </header>
