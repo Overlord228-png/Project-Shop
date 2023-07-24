@@ -8,18 +8,23 @@
 .footer__conteiner{
     max-width: 1440px;
     width: 100%;
+    flex-shrink: 0;
     margin: 0 auto;
+    padding: 70px 0 0 0;
 }
 
 .distribution{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     border-radius: 10px;
+    padding: 5% 5%;
     background: rgba(29, 58, 160, 0.90);
 }
-
-h1{
+.text__title{
+    max-width: 798px;
+    width: 100%;
     color: #FFF;
     text-align: center;
     font-size: 50px;
@@ -28,7 +33,10 @@ h1{
     line-height: normal;
 }
 
-h6{
+.specification__text{
+    max-width: 704px;
+    width: 100%;
+    padding: 2% 0 0 0;
     color: #FFF;
     text-align: center;
     font-size: 22px;
@@ -37,25 +45,104 @@ h6{
     line-height: 140.2%; /* 30.844px */
 }
 
+.distr__block{
+    display: flex;
+    max-width: 660px;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 2% 0 0 0;
+}
+
+.text__block{
+    max-width: 490px;
+    width: 100%;
+    margin: 2% auto;
+    text-align: center;
+}
+
+.text__start{
+    color: rgba(227, 230, 240, 0.72);
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 119%; 
+}
+
+.text__private{
+    padding: 2% 0 0 0;
+    color: rgba(227, 230, 240, 0.72);
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 119%; /* 17.85px */
+    text-decoration-line: underline;
+}
+
+/*
+.footer__conteiner{
+    max-width: 1440px;
+    width: 100%;
+    flex-shrink: 0;
+    margin: 0 auto;
+}
+
+.distr__block{
+    display: flex;
+    max-width: 615px;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.text__title{
+    color: #FFF;
+    text-align: center;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.specification__text{
+    max-width: 704px;
+    width: 100%;
+    color: #FFF;
+    text-align: center;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140.2%; 
+}
+
 p{
     width: 500px;
     margin: 26px auto;
     color: rgba(227, 230, 240, 0.72);
-    line-height: 119%; /* 17.85px */
+    line-height: 119%;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
     text-align: center;
 }
+*/
 
-input{
-    width: 425px;
+.input__distr-email{
+    max-width: 425px;
+    width: 100%;
     border-radius: 10px;
     background: #FFF;
+    color: rgba(21, 26, 38, 0.60);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 166.5%;
 }
 
-button{
-    width: 182px;
+.btn__distr-email{
+    max-width: 182px;
+    width: 100%;
     border-radius: 10px;
     background: #F2F60F;
 }
