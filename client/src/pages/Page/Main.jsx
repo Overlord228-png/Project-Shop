@@ -6,9 +6,7 @@ export default function Main() {
     return (
         <>
             <Header />
-            <br />
             <MainInfo />
-            <br />
             <Footer />
         </>
     )
