@@ -7,9 +7,7 @@ export default function Blog() {
     return (
         <>
         <Header />
-        <br />
         <BlogInfo />
-        <br />
         <Footer />
         </>
     )
