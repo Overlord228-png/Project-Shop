@@ -7,9 +7,7 @@ export default function About() {
     return (
         <>
             <Header />
-            <br />
             <AboutInfo />
-            <br />
             <Footer/>
         </>
     )
