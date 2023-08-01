@@ -7,9 +7,7 @@ export default function LogIn() {
     return (
         <>
             <Header />
-            <br />
             <LoginInfo />
-            <br />
             <Footer />
         </>
     )
