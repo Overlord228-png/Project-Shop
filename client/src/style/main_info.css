@@ -1,1 +1,43 @@
 @import "style/reset.css";
+.Main{
+    width: 100%;
+    min-height: 900px;
+    margin: 0 auto;
+    flex: 1 1 auto;
+}
+
+.main__conteiner{
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.search__block{
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+.product__container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+.product__card{
+    display: flex;
+    max-width: 200px;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product__img{
+    max-width: 180px;
+    width: 100%;
+}
