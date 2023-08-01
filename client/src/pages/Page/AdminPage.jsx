@@ -6,9 +6,7 @@ export default function AdminPage() {
     return (
         <>
             <HeaderAdmin />
-            <br />
             <AdminInfo />
-            <br />
             <FooterAdmin />
         </>
     )
