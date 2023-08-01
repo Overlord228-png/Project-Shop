@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import InputSearchPoduct from 'components/Inputs/InputSearchPoduct';
+import "style/main_info.css"
 
 export default function MainInfo() {
     // объекты со всеми брендами
@@ -14,9 +15,6 @@ export default function MainInfo() {
 
     // объекты со всеми типами
     const [types, setTypes] = useState ([])
-
-    // объекты со всеми брендами и типами
-    const [loadProdcutsByType, setloadProdcutsByType] = useState ([])
 
     // id активного типу (выбранного)
     const [activeType, setActiveType] = useState(-1)
@@ -94,37 +92,44 @@ export default function MainInfo() {
     },[activeBrand,activeType])
     
     return (
-        <main className="">
-            <InputSearchPoduct setSearchProduct={setSearchProduct} searchProducr={searchProducr}/>
-            <select className="" onChange={(e)=> changeActiveBrand(e.target.selectedOptions[0].value)}>
-                {
-                    brands.map((brand,idx)=>
-                    <option className="" key={idx} value={brand.id}>
-                        {brand.name}
-                    </option>
-                    )
-                }
-                <option value="-1">sad</option>
-            </select>
-            <select className="" onChange={(e)=> changeActiveType(e.target.selectedOptions[0].value)}>
-                {
-                    types.map((type,idx)=>
-                        <option className="" key={idx} value={type.id}>
-                            {type.name}
-                        </option>
-                    )
-                }
-                <option className="" value="-1">sad</option>
-            </select>
-            <div className="">
+        <main className="Main">
+            <div className='main__conteiner'>
+
+                <div className="search__block">
+                    <InputSearchPoduct setSearchProduct={setSearchProduct} searchProducr={searchProducr}/>
+                    <select className="" onChange={(e)=> changeActiveBrand(e.target.selectedOptions[0].value)}>
+                        {
+                            brands.map((brand,idx)=>
+                            <option className="" key={idx} value={brand.id}>
+                                {brand.name}
+                            </option>
+                            )
+                        }
+                        <option value="-1">sad</option>
+                    </select>
+                    <select className="" onChange={(e)=> changeActiveType(e.target.selectedOptions[0].value)}>
+                        {
+                            types.map((type,idx)=>
+                                <option className="" key={idx} value={type.id}>
+                                    {type.name}
+                                </option>
+                            )
+                        }
+                        <option className="" value="-1">sad</option>
+                    </select>
+                </div>
+
                 <h3 className="">Список продуктов</h3>
-                {products.map((product) => (
-                    <div className="product__item" key={product.id}>
-                        <h2 className="">{product.name}</h2>
-                        <img className="product__img" src={`http://127.0.0.1:5000/${product.img}`} alt={product.name}/>
-                        <p className="text__price">{product.price}$</p>
-                    </div>
-                ))}
+                <div className="product__container">
+                    {products.map((product) => (
+                        <div className="product__card" key={product.id}>
+                            <h2 className="product__name">{product.name}</h2>
+                            <img className="product__img" src={`http://127.0.0.1:5000/${product.img}`} alt={product.name}/>
+                            <p className="product__price">{product.price}$</p>
+                        </div>
+                    ))}
+                </div>
+                
             </div>
         </main>
     )
