@@ -7,9 +7,7 @@ export default function Shop() {
     return (
         <>
             <Header />
-            <br />
             <ShopInfo />
-            <br />
             <Footer />
         </>
     )
