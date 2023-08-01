@@ -3,7 +3,7 @@ import InputEmailItem from 'components/Inputs/LogInItems/InputEmailItem';
 import InputPasswordItem from 'components/Inputs/LogInItems/InputPasswordItem';
 
 import Facebook from "img/facebook.png"
-import Twitter from "img/twitter.png"
+import Twitter from "img/free-icon-twitter-2504947.png"
 import Google from "img/google.png"
 
 import "style/styleLogin.css"
