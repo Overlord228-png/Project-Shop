@@ -7,9 +7,7 @@ export default function Registraishen() {
     return (
         <>
             <Header />
-            <br />
             <RegistraishenInfo />
-            <br />
             <Footer />
         </>
     )
