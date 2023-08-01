@@ -7,8 +7,6 @@ import AddProduct from "components/Buttons/AddProduct"
 import InputNameProduct from "components/Inputs/InputAdd/InputNameProduct"
 import InputPriceProduct from "components/Inputs/InputAdd/InputPriceProduct"
 
-import "style/styleProduct.css"
-
 export default function ProductInfo() {
     /// общие хуки
     /// for brand
@@ -91,16 +89,10 @@ export default function ProductInfo() {
                 <InputNameProduct setNameDevice={setNameDevice} nameDevice={nameDevice}/>
                 <InputPriceProduct setPriceDevice={setPriceDevice} priceDevice={priceDevice}/>
             </div>
-            
-            <br />
-            <br />
 
             <div className="">
                 <InputAddFile setImg={setImg} img={img} />
             </div>
-
-            <br />
-            <br />
 
             <div className="">
                 <select onChange={(e)=>ShowIdType(e.target.selectedOptions[0].value)}>
@@ -115,9 +107,6 @@ export default function ProductInfo() {
                 </select>
             </div>
 
-            <br />
-            <br />
-
             <div className="">
                 <select onChange={(e)=> ShowIdBrand(e.target.selectedOptions[0].value)}>
                     {
@@ -131,20 +120,29 @@ export default function ProductInfo() {
                 </select>
             </div>
 
-            <br />
-            <br />
-
             <div className="">
                 <AddProduct addProduct={addProduct} />
             </div>
-            
-            {showProduct.map((product) => (
-                <div key={product.id} className="product__item">
-                    <h2 className="">{product.name}</h2>
-                    <img src={`http://127.0.0.1:5000/${product.img}`} alt={product.name} className="product__img"/>
-                    <p className="text__price">{product.price}$</p>
-                </div>
-            ))}
+            <div className="product__container">
+                {showProduct.map((product) => (
+                    <div key={product.id} className="product__item">
+                        <h2 className="">{product.name}</h2>
+                        <img src={`http://127.0.0.1:5000/${product.img}`} alt={product.name} className="product__img"/>
+                        <p className="text__price">{product.price}$</p>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
+/*
+            <div className="product__container">
+                {products.map((product) => (
+                    <div className="product__card" key={product.id}>
+                        <h2 className="product__name">{product.name}</h2>
+                        <img className="product__img" src={`http://127.0.0.1:5000/${product.img}`} alt={product.name}/>
+                        <p className="product__price">{product.price}$</p>
+                    </div>
+                ))}
+            </div>
+*/
