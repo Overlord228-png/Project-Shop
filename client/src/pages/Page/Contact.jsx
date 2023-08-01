@@ -7,9 +7,7 @@ export default function Contact() {
     return (
         <>
             <Header />
-            <br />
             <ContactInfo />
-            <br />
             <Footer />
         </>
     )
