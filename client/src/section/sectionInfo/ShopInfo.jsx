@@ -1,44 +1,56 @@
 import React, { useEffect, useState } from 'react';
-import axios from "axios";
+import axios from 'axios';
 
 export default function ShopInfo() {
     const [search, setSearch] = useState('');
-    const [sortOption, setSortOption] = useState('name'); // 'name' or 'price'
+    const [sortOption, setSortOption] = useState('name');
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
 
-    // Load products from API
-    const loadProducts = async () => {
-        const resp = await axios.get("http://127.0.0.1:5000/api/device/");
-        setProducts(resp.data.rows);
-    };
-
-    // Filter products based on name and price
     useEffect(() => {
-        const filteredByName = products.filter(product => product.name.toLowerCase().startsWith(search.toLowerCase()));
-        const filteredByPrice = products.filter(product => product.price.toString().includes(search));
-        const combinedFilteredProducts = sortOption === 'name' ? filteredByName : filteredByPrice;
-        setFilteredProducts(combinedFilteredProducts);
-    }, [search, sortOption, products]);
-
-    // Load products on component mount
-    useEffect(() => {
-        loadProducts();
+        const fetchProducts = async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:5000/api/device/')
+                setProducts(response.data.rows)
+            } catch (error) {
+                console.error('Error fetching products:', error)
+            }
+        };
+        fetchProducts()
     }, []);
+
+    useEffect(() => {
+        const filterAndSortProducts = () => {
+        const filteredByName = products.filter(product =>
+            product.name.toLowerCase().includes(search.toLowerCase())
+        );
+        const filteredByPrice = products.filter(product =>
+            product.price.toString().includes(search)
+        );
+        const filteredProducts =
+            sortOption === 'name' ? filteredByName : filteredByPrice;
+        if (sortOption === 'price') {
+            filteredProducts.sort((a, b) => b.price - a.price);
+        }
+        setFilteredProducts(filteredProducts);
+        };
+        filterAndSortProducts();
+    }, [search, sortOption, products]);
 
     return (
         <section>
             <input
+                type="text"
                 value={search}
-                placeholder='Search'
-                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search"
+                onChange={e => setSearch(e.target.value)}
             />
-            <select value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
+            <select value={sortOption} onChange={e => setSortOption(e.target.value)}>
                 <option value="name">Sort by Name</option>
                 <option value="price">Sort by Price</option>
             </select>
             <div className="product__container">
-                {filteredProducts.map((product) => (
+                {filteredProducts.map(product => (
                     <div className="product__card" key={product.id}>
                         <h2 className="product__name">{product.name}</h2>
                         <img className="product__img" src={`http://127.0.0.1:5000/${product.img}`} alt={product.name} />
@@ -47,8 +59,9 @@ export default function ShopInfo() {
                 ))}
             </div>
         </section>
-    )
+    );
 }
+
 
 /*
 import React from 'react'
