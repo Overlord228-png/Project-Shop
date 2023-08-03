@@ -1,6 +1,7 @@
 import InputCheckboxItem from 'components/Inputs/LogInItems/InputCheckboxItem';
 import InputEmailItem from 'components/Inputs/LogInItems/InputEmailItem';
 import InputPasswordItem from 'components/Inputs/LogInItems/InputPasswordItem';
+import RegisterBtn from 'components/Buttons/RegisterBtn';
 
 import Facebook from "img/facebook.png"
 import Twitter from "img/free-icon-twitter-2504947.png"
@@ -9,14 +10,21 @@ import Google from "img/google.png"
 import "style/styleLogin.css"
 import React, {useState} from 'react'
 import { NavLink } from 'react-router-dom';
-import RegisterBtn from 'components/Buttons/RegisterBtn';
+import { useDispatch , useSelector} from 'react-redux';
 
 export default function LoginInfo() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [remember, setRemember] = useState(false);
 
+    const dispatch = useDispatch()
+    const user = useSelector((store)=> store.userReducer)
+
     const handleSubmit = async (e) => {
+        /*
+            e.preventDefault();
+            dispatch(registration({email:email,password:password}))
+        */
         e.preventDefault();
         try {
             const response = await fetch('/login', {
