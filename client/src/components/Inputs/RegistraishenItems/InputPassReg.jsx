@@ -6,10 +6,9 @@ export default function InputPassReg(props) {
             <input 
                 className=""
                 type="password" 
-                name="passwordCheck" 
                 placeholder='Password'
                 value={props.password}
-                onChange={(e)=>props.handleChange(e.target.value)}
+                onChange={(e)=>props.setPassword(e.target.value)}
             />
         </div>
     )

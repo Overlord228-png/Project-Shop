@@ -1,11 +1,22 @@
 import "style/header.css"
 import LogIn from "components/Buttons/LogIn";
-import LogOut from "components/Buttons/LogOut";
+import Registraishen from "components/Buttons/Registraishen";
 import Logotip from "img/logotip.svg"
 import User from "img/User2.png"
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {logOut} from "store/features/userSlice"
 
 export default function Header() {
+
+    const user = useSelector((store)=> store.userReducer)
+    const dispatch = useDispatch()
+
+    const exitStore = async (e) => {
+        e.preventDefault();
+        dispatch(logOut())
+    }
+
     return (
         <header className="header">
             <div className="header__conteiner">
@@ -41,12 +52,27 @@ export default function Header() {
                         <NavLink className="user__admin" to="/admin">
                             <img src={ User } alt="admin page" />
                         </NavLink>
-                        <NavLink className="" to="/LogIn">
-                            <LogIn />
-                        </NavLink>
-                        <NavLink className="" to="/Registraishen">
-                            <LogOut />
-                        </NavLink>
+
+                        {user.id != -1 ?
+                        <>
+                            <NavLink>
+                                <p style={{color:"white"}}>{user.email}</p>
+                            </NavLink>
+                            <NavLink>
+                                <button onClick={exitStore}>
+                                    Log Out
+                                </button>
+                            </NavLink> 
+                        </>
+                            :
+                        <>
+                            <NavLink className="" to="/LogIn">
+                                <LogIn />
+                            </NavLink>
+                            <NavLink className="" to="/Registraishen">
+                                <Registraishen />
+                            </NavLink>
+                        </>}
                     </div>
                 </div>
             </div>
